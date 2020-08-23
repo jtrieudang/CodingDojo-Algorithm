@@ -1,0 +1,164 @@
+PART 1
+1.
+function multiply(x,y){
+    console.log(x);
+    console.log(y);
+}
+b = multiply(2,3);
+console.log(b);
+
+Var     | Val
+b       | multiply(2,3)
+x       |2
+y       |3
+Output:2,3,undefined
+---------------------------------------------------------------------
+2.
+function multiply(x,y){
+    return x*y;
+}
+b = multiply(2,3);
+console.log(b);
+console.log(multiply(5,2));
+
+Var     | Val
+b       |multiply(2,3) -> 6, multiply(5,2)->10
+x       |2 ->5
+y       |3 ->2
+Output:6,10
+---------------------------------------------------------------------
+3.
+var x = [1,2,3,4,5,10];
+for(var i=0; i<5; i++)
+{
+   i = i + 3; 
+   console.log(i);
+}
+
+Var     | Val
+x       |[1,2,3,4,5,10]
+i       |0->3->4->7
+Output:3,7
+----------------------------------------------------------------------
+4.
+var x=15;
+console.log(x);
+function awesome(){
+    var x=10;
+    console.log(x);
+}
+console.log(x);
+awesome();
+console.log(x);
+
+Var         | Val
+x           |15
+x(function) |10
+
+Output:15,15,10,15
+-----------------------------------------------------------------------
+5.
+for(var i=0; i<15; i+=2){
+   console.log(i);
+}
+
+Var     | Val
+i       |0->2->4->6->8->10->12->14
+Output:0,2,4,6,8,10,12,14
+-------------------------------------------------------------------------
+6.
+for(var i=0; i<3; i++){
+   for(var j=0; j<2; j++){       
+       console.log(i*j);
+   }
+}
+
+Var     | Val
+i       |0->1->2->3
+j       |0->1->2->0->1->2->0->1->2
+Output:0,0,0,1,0,2
+-------------------------------------------------------------------------
+7.
+function looping(x,y){
+   for(var i=0; i<x; i++){
+      for(var j=0; j<x; j++){         
+          console.log(i*j);
+      } 
+   }
+}
+z = looping(3,3);
+console.log(z);
+
+Var     | Val
+z       |looping(3,3)
+x       |3
+y       |3
+i       |0->1->2->3
+j       |0->1->2->3->0->1->2->3->0->1->2->3
+Output:0,0,0,0,1,2,0,2,4,undefined
+---------------------------------------------------------------------------
+8.
+function looping(x,y){
+   for(var i=0; i<x; i++){
+      for(var j=0; j<y; j++){         
+         console.log(i*j);
+      } 
+   }
+   return x*y;
+}
+z = looping(3,5);
+console.log(z);
+
+Var     | Val
+z       |looping(3,5)->15
+x       |3
+y       |5
+i       |0->1->2->5
+j       |0->1->2->3->4->5->0->1->2->3->4->5->0->1->2->3->4->5
+Output:0,0,0,0,0,0,1,2,3,4,0,2,4,6,8,15
+
+PART 2
+1.
+function printUpTo(x){
+   if(x<0){
+      return false
+   }
+   else{
+      for(var i=0;i<=x;i++)
+      console.log(i)
+   }
+}
+printUpTo(1000); // should print all the integers from 1 to 1000
+y = printUpTo(-10); // should return false
+console.log(y); // should print false
+
+
+2.
+function printSum(x){
+  var sum = 0;
+  for(var i=0; i<x;i++){
+      console.log(i);
+      console.(sum);
+      sum= 0+ i;
+}
+  return sum
+}
+y = printSum(255) 
+console.log(y) 
+
+3.
+function printSumArray(x){
+  var sum = 0;
+  for(var i=0; i<x.length; i++) {
+    sum =x[i]*2
+  }
+  return sum;
+}
+console.log( printSumArray([1,2,3]) ); // should log 6
+
+Bonus:
+function arr(x){
+
+    return x[1]
+}
+console.log(arr([1,30,5,7]))
