@@ -1,0 +1,170 @@
+Intermediate Foundation
+PART 1
+
+1. Sigma - Implement function sigma(num) that, given a number, returns the sum of all positive integers up to the given number (inclusive).  Ex: sigma(3) = 6 (or 1+2+3); sigma(5) = 15 (or 1+2+3+4+5).
+
+function sigma(num){
+    var sum=0;
+    for(var i=0;i<=num;i++){
+            sum=sum+i;
+        }
+    }
+    return sum;
+}
+console.log(sigma(num));
+-----------------------------------------------------------------------
+2. Factorial - Write a function factorial(num) that, given a number, returns the product (multiplication) of all positive integers from 1 up to the given number (inclusive).  For example, factorial(3) = 6 (or 1*2*3); factorial(5) = 120 (or 1*2*3*4*5).
+
+function factorial(num){
+   var sum=1;
+    for(var i=0;i<=num;i++){
+            sum=sum*i;
+        }
+    }
+    return sum;
+}
+console.log(factorial(num));
+-----------------------------------------------------------------------
+**3. Fibonacci - Create a function to generate Fibonacci numbers.  In this famous mathematical sequence, each number is the sum of the previous two, starting with values 0 and 1.  Your function should accept one argument, an index into the sequence (where 0 corresponds to the initial value, 4 corresponds to the value four later, etc).  Examples: fibonacci(0) = 0 (given), fibonacci(1) = 1 (given), fibonacci(2) = 1 (fib(0)+fib(1), or 0+1), fibonacci(3) = 2 (fib(1) + fib(2)3, or 1+1), fibonacci(4) = 3 (1+2), fibonacci(5) = 5 (2+3), fibonacci(6) = 8 (3+5), fibonacci(7) = 13 (5+8).  Do this without using recursion first.  If you don't know what a recursion is yet, don't worry as we'll be introducing this concept in Part 2 of this assignment.
+
+function fib(num){
+    var arr=[0,1];
+    var sum= 1;
+        for(var i=2;i<=num;i++){
+            sum= arr[0] + arr[1];
+            sum=sum+i;
+        }
+        return sum;
+}
+console.log(fib(num));
+
+MAYBE???
+function fib(n) {
+
+  const result = [0, 1];
+  for (var i = 2; i <= n; i++) {
+    const a = (i - 1);
+    const b = (i - 2);
+    result.push(a + b);
+  }
+  return result[n];
+
+}
+
+console.log(fib(n));
+
+MAYBE THIS?
+
+function fib(n) {
+
+  const result = [0, 1];
+  for (var i = 2; i < n; i++) {
+    result.push(result[i-2] + result[i-1]);
+  }
+  return result; // or result[n-1] if you want to get the nth term
+
+}
+
+console.log(fib(8)); 
+-----------------------------------------------------------------------
+4. Array: Second-to-Last: Return the second-to-last element of an array. Given [42, true, 4, "Liam", 7], return "Liam".  If array is too short, return null.
+
+function 2ndtolast(arr){
+        if(arr.length< 2){
+            return null;
+        }
+        else{
+        return arr[arr.length-2];
+        }
+}
+y=[42, true, 4, "Liam", 7];
+console.log(2ndtolast(y));
+-----------------------------------------------------------------------
+5. Array: Nth-to-Last: Return the element that is N-from-array's-end.  Given ([5,2,3,6,4,9,7],3), return 4.  If the array is too short, return null.
+
+function nth(arr,Y){
+    if(arr.length<n){
+        retuen null;
+    }
+    else{ return arr[arr.length-Y];
+    }
+}
+x= [[5,2,3,6,4,9,7],3]
+console.log(nth(x))
+-----------------------------------------------------------------------
+*6. Array: Second-Largest: Return the second-largest element of an array. Given [42,1,4,3.14,7], return 7.  If the array is too short, return null.
+
+function largest(arr){
+    var max= arr[0];
+    var large2= arr[0];
+    for(var i=0;i<arr.legnth;i++){
+        if(arr.length<2){
+            return null;
+        }
+        else if(arr[i]>max){
+            large2=max;
+            max=arr[i];
+        }
+        else if(arr[i]>large2){
+            if(arr[i]<max){
+            large2=arr[i]
+            }
+        }
+        return large2;
+    }
+}
+x= [42,1,4,3.14,7]
+console.log(largest(x))
+
+MAYBE?
+
+function secMax(arr){
+var max = arr[0];
+var sec = arr[0];
+    for(var i=0;i<arr.length;i++){
+      if(arr.length<2){
+        return null;
+      }
+        else if(arr[i]>max){
+            sec= max;
+          max = arr[i];
+        }
+      else if(arr[i]>sec && arr[i] < max)
+        sec = arr[i];
+    }
+  return sec;
+  
+}
+console.log(secMax([1, 9, 5, 4]));
+console.log(secMax([2, 10, 15, 4]));
+console.log(secMax([1]));
+console.log(secMax([]));
+-----------------------------------------------------------------------
+7. Double Trouble: Create a function that changes a given array to list each existing element twice, retaining original order.  Convert [4, "Ulysses", 42, false] to [4,4, "Ulysses", "Ulysses", 42, 42, false, false].
+
+function double(arr){
+    var newarr=[];
+    for(var i=0;i<arr.legnth;i++){
+    newarr.push(arr[i]);
+    newarr.push(arr[i]);
+    }
+}
+console.log(double(arr));
+-----------------------------------------------------------------------
+*****
+PART 2
+
+function fib(num){
+    if(num<=2){
+        return 1;
+    }
+    return fib(num-1)+fib(num-2);
+    
+}
+var y=fib(num)
+console.log(y);
+
+
+
+
+https://github.com/jghoang/Intermediate-Foundations/blob/master/Jen_H_IntermediateFoundation1.html
