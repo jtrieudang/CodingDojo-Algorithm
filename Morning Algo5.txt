@@ -1,0 +1,65 @@
+4-15-2020 ALGO
+/**
+ * takes in a string
+ * returns a new string
+ * with the original "compressed"
+ * if the "compressed" version IS NOT shorter,
+ * return the original
+ */
+
+function encode(str) {
+    var newstr = '';
+    var charcounter = 1
+    for(var i=0;i<str.length; i++){
+        if(str[i] ==  str[i+1]){
+            charcounter++;
+        }
+        else if (str[i]!== str[i+1]){
+            newstr=newstr+str[i]+charcounter
+            charcounter=1
+        }
+    }
+    if(newstr.length > str.length){
+        return str
+    }
+    else{
+        return newstr
+    }
+  }
+  
+  console.log(encode('aabbbbbb')); // should log 'a2b6'
+  console.log(encode('abbbbbbbbbb')); // should log 'a1b10'
+  console.log(encode('abc')); // should log 'abc'
+  
+  
+  /**
+   * takes in a string
+   * returns a string
+   * with the original "expanded"
+   * 
+   * parseInt('a') returns NaN
+   * parseInt('5') returns 5
+   * isNaN('c') returns true
+   */
+  
+  function decode(str) {
+    var newstr='';
+    var char = ''
+    var repeatnumber = 0
+    var repeatedchar = ''
+    for(var i=0;i<str.length; i++){
+     var num = parseInt(str[i]);
+        if(isNaN(num) === true){
+            char = str[i]
+        }
+        else if (num !== NaN){
+            repeatnumber = num;
+            repeatedchar = char.repeat(repeatnumber);
+            newstr = newstr + repeatedchar;
+        }
+    }
+    return newstr
+  }
+
+  console.log(decode('a2b6')); // should log 'aabbbbbb'
+  console.log(decode('a1b10')); // should log 'abbbbbbbbbb'
