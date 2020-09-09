@@ -1,0 +1,55 @@
+4-16-2020 ALGO4-17-2020 ALGO**
+ * takes in a string and a number
+ * returns a new string with the characters
+ * rotated to the left by the given number
+ * Note: the number can be greater than the string length
+ */
+
+function rotateString(str, num) {
+    newstr = ''
+    
+    num = num % str.length
+    
+    for(var i=str.length-num; i<str.length; i++){
+        newstr = newstr + str[i];
+    }
+    for(var i=0;i<str.length-num;i++){
+        newstr= newstr + str[i];
+    }
+    return newstr
+  }
+  
+  console.log(rotateString('Boris Godunov', 5));
+  // should log 'dunovBoris Go'
+  console.log(rotateString('this', 5)); // should log 'sthi'
+  
+  88888888888
+  if(str1.length!==str.length){
+return false
+}
+88888888888
+  /**
+   * takes in two strings
+   * returns a boolean
+   * Is the second string a rotation of the first?
+   * See if you can optimize once you get it working.
+   * ninja bonus: negative numbers
+   */
+  
+  function isRotation(str1, str2) {
+    for(var i=0;i<str1.length;i++){
+        if(rotateString(str1,i) === str2){
+            return true
+        }
+    }
+    return false
+  }
+  
+  //first character of original string, find it in the second string
+
+  console.log(isRotation('Boris Godunov', 'dunovBoris Go'));
+  // should log true
+
+  // 
+  console.log(isRotation('hello world', 'llo worldHe'));
+  // should log false
