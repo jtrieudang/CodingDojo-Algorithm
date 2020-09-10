@@ -1,0 +1,83 @@
+**4-17-202 algo
+function updateInventory(newInv, currentInv) {
+for (var i = 0; i<newInv.length; i++){
+var found = false;
+for(var j = 0; j<currentInv.length; j++){
+if (newInv[i].name == currentInv[j].name){
+currentInv[j].quantity+=newInv[i].quantity;
+found = true;
+break;
+}
+}
+if (found == false){
+currentInv.push(newInv[i]);
+}
+}
+return currentInv;
+}
+
+console.log(updateInventory([
+{
+name: ‘item’,
+quantity: 1
+}
+], [
+{
+name: ‘item’,
+quantity: 2
+}
+])); // should log [{ name: ‘item’, quantity: 3 }]
+
+console.log(updateInventory([
+{
+name: ‘item’,
+quantity: 1
+}
+], [
+{
+name: ‘other item’,
+quantity: 2
+}
+])); // should log [{ name: ‘item’, quantity: 1 }, { name: ‘other item’, quantity: 2 }]
+
+
+function updateInventory(newInv, currentInv) {
+    for (var i = 0; i<newInv.length; i++){
+        var found = false;
+        for(var j = 0; j<currentInv.length; j++){
+            if (newInv[i].name == currentInv[j].name){
+                currentInv[j].quantity+=newInv[i].quantity;
+                found = true;
+                break;
+            }
+        }
+        if (found == false){
+            currentInv.push(newInv[i]);
+        }
+    }
+    return currentInv;
+}
+
+  console.log(updateInventory([
+    {
+      name: 'item',
+      quantity: 1
+    }
+  ], [
+    {
+      name: 'item',
+      quantity: 2
+    }
+  ])); // should log [{ name: 'item', quantity: 3 }]
+
+  console.log(updateInventory([
+    {
+      name: 'item',
+      quantity: 1
+    }
+  ], [
+    {
+      name: 'other item',
+      quantity: 2
+    }
+  ])); // should log [{ name: 'item', quantity: 1 }, { name: 'other item', quantity: 2 }]
