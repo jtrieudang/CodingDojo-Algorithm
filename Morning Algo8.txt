@@ -1,0 +1,56 @@
+/**
+ * takes in an array of numbers
+ * returns a boolean
+ * Is there a point between indices
+ * where the summed values on each side are equal?
+ */
+
+function balancePoint(arr) {
+    for (var i =0; i<arr.length;i++){
+        var leftsum = 0;
+        var rightsum = 0;
+        for ( var j = 0;j<=i;j++){
+            leftsum+=arr[j];
+        }
+        for (var k = i+1;k<arr.length;k++){
+            rightsum+=arr[k];
+        }
+        if (leftsum === rightsum){
+            return true;
+        }
+    }
+    return false;
+}
+  
+  console.log(balancePoint([1, 2, 3, 4])); // should log false
+  console.log(balancePoint([3, 4, 2, 5]));
+  // should log true (between indices 1 and 2)
+  
+  
+  /**
+   * takes in an array of numbers
+   * returns an integer
+   * if there is an index in which the summed values
+   * on each side are equal, return it
+   * otherwise, return -1
+   */
+  
+function balanceIndex(arr) {
+    for (var i =1; i<arr.length; i++){
+        var leftsum = 0;
+        var rightsum = 0;
+        for (var j = 0; j<=i-1;j++){
+            leftsum += arr[j];
+        }
+        for (var k = i+1; k<arr.length;k++){
+            rightsum += arr[k];
+        }
+        if (leftsum === rightsum){
+            return i;
+        }
+    }
+    return -1;
+}
+  
+  console.log(balanceIndex([-2, 5, 7, 0, 3])); // should log 2
+  console.log(balanceIndex([9, 9])); // should log -1
