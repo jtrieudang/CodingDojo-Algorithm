@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+        // In words:
+        // 1. Create a function that reverse the order of the Array
+
+        // 3. create a variable temp where it equals to arr[0]
+        // 4. replace arr[0] with the array of array length minus 1
+        // 5. the array of array length minus 1 equal to arr[0]
+        // 2. create a for loop with a var i that equal to 1, where i is less than the length of the array, and i is incremented by 1.
+        // 6. create a temp vari which equal to arr[i]
+        // 7. arr[i] becomes the array of array length minus the sum i plus 1
+        // 8. array of array length minus the sum of i plus 1 equals to the temp 
+
+        //[6,5,5,3]
+        // var temp = arr[0] ->3 -> 4
+        // arr[0] = arr[arr.length-1]
+        // arr[arr.length-1] =temp
+
+        // for(var i=1; i<arr.length;i++);
+        // var temp = arr[i] 
+        // arr[i] = arr[arr.length-(i+1)] 
+        // arr[arr.length-(i+1)] = temp
+
+    function reverse(Myarr){
+        //code
+        for(var i=0; i<(arr.length)/2; i++){
+            var temp = arr[i];
+            arr[i]=arr[(arr.length-i-1)];
+            arr[(arr.length-i-1)]=temp;
+        }
+    }
+
+y= [3,5,4,6]
+Console.log(reverse(y)
+    
+    //MIRROR
+
+    function isPalindrome(word){
+        //return true if it is the same forwards as backwards
+        //return false if it is not
+        for(var i=0; i<(word.length)/2;i++){
+            if(word.length[i] == word[word.length-(i+1)]) {
+            }
+            else{
+                return false;
+            }
+        }
+        return true;
+    }
+    word1 = "racecar"
+    word2 = "hello"
+    word3 = "baobob"
+    console.log(isPalindrome(word1)); //should be true 
+    console.log(isPalindrome(word2)); //false
+    console.log(isPalindrome(word3)); //false
+
+    //1. if
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
