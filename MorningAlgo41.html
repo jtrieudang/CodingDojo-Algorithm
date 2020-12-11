@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<script>
+
+
+function generateCoinChange(pennies) {
+var coins = {quarters:0, dimes:0, nickels:0,cents:0}
+var quarters_val = 25;
+var dimes_val = 10;
+var nickels_val = 5;
+var cents_val = 1;
+var remainingChange = pennies;
+
+    while (remainingChange >= quarters_val){
+        remainingChange = remainingChange - quarters_val;
+        coins.quarters++; 
+    }
+    while (remainingChange >= dimes_val){
+        remainingChange = remainingChange - dimes_val;
+        coins.dimes++;
+    }
+    while (remainingChange >= nickels_val){
+        remainingChange = remainingChange - nickels_val;
+        coins.nickels++;
+    }
+    while (remainingChange >= cents_val){
+        remainingChange = remainingChange - cents_val;
+        coins.cents++;
+    }
+    return coins
+}
+
+
+// return an object (key value pairs)
+// with the optimal coin change
+// ex: Given 99 (pennies) return:
+// {quarters: 3, dimes: 2, pennies: 4}
+}
+
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
